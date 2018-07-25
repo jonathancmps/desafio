@@ -1,0 +1,56 @@
+
+.input-search{
+    background: url(./../img/i-search.png) no-repeat scroll 4px 4px;
+    background-size: 18px;
+    background-position: 98% 50%;     
+}
+
+.list-name{
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+    color: #00868B;    
+}
+
+.list-role{
+    font-size: 12px;
+    color: #528B8B;
+}
+
+.container-right{
+    border: 1px solid;
+    color: silver;
+    height: 400px;
+    margin-top: 50px;
+    overflow: auto;
+
+}
+
+.sub-conteiner-right{
+    border: solid 1px;
+    margin: 25px;
+    color: brown; 
+    height: 80%;
+}
+
+.photo-circle{
+    border: 1px solid;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#calaborators-info{
+    text-align: left;
+}
+
+#teste{    
+    width: 10px;
+}
+
+.container-left{
+
+}
+
+/* accordion bootstrap 3, pesquisar */
+
