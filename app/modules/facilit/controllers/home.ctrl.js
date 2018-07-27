@@ -25,6 +25,7 @@
             vm.role = ApiFactory.roleFilter(vm.apiList)
 
             //vm.department
+           // searchQuery={}
     
         }         
     

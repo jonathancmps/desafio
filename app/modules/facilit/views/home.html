@@ -2,30 +2,37 @@
 <div class="row">
     <div class="col-md-4 container-righ">
         <div class="form-group">    
-            <h2>Filtrar por colaboradores</h2>
-            <input type="text" ng-model="search" class="form-control input-search" id="exampleInputEmail1" placeholder="Filtrar por todos os campos">
+            <h2 id="main-title">FILTRAR COLABORADORES</h2>
+            <input type="text" ng-model="search" class="input-search" id="exampleInputEmail1" placeholder="Filtrar por todos os campos">
         </div>
-            <span>Ou</span>
+            <div id="ou">
+                <span>OU</span>
+            </div>      
         
-            <h3>Filtrar por categoria</h3>
+            <h3 id="category-title">Filtrar por categoria</h3>
 
-            <a data-toggle="collapse" data-target="#demo" href="#" class="list-group-item active">DEPARTAMENTO</a>
-            <div id="demo" class="collapse" >
-                <a href="#" ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
+            <div class="test">
+                <a data-toggle="collapse" data-target="#demo" href="#" class="list-group-item"><img class='category-img' src="./../../../assets/img/i-departamento.png" alt="">DEPARTAMENTO</a>
+                <div id="demo" class="collapse" >
+                    <a href="#" ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
+                </div>
             </div>
-            
-            <br/>
 
-            <a data-toggle="collapse" data-target="#dem" href="#" class="list-group-item active">CARGO</a>
-            <div id="dem" class="collapse" >
-                <a href="#" ng-repeat="roleName in vm.role" class="list-group-item" ng-bind="roleName"></a>
-            </div> 
-            
-            <button type="button" class="btn btn-default">Default</button>               
+            <div>
+                <a  data-toggle="collapse" data-target="#dem" href="#" class="list-group-item"><img class='category-img' src="./../../../assets/img/i-cargo.png" alt=""> CARGO</a>
+                <div id="dem" class="collapse " >
+                    <a href="#" ng-repeat="roleName in vm.role" class="list-group-item" ng-bind="roleName"></a>
+                </div> 
+            </div>
+
+           
+            <div class="button-filter">
+                <button type="button" class="btn btn-sm">FILTRAR</button>
+            </div>               
     </div>
     
     <div class="container col-md-8 container-right">
-        <table class="table table-striped table-hover">
+        <table class="table  table-hover">
                 <tr  ng-repeat = "item in vm.apiList | filter : search">
                     <td id="teste">
                         <img ng-src="{{item.photo}}"  class="img-circle photo-circle">
@@ -38,13 +45,17 @@
                 </tr> 
             </table>
         </div>
-    </div> 
-    
-
-    
+    </div>     
   </div>
 
-  
+  <!-- <select class="form-control" id="sel1" ><img src="./../../../assets/img/i-cargo.png" alt="">
+    <option>DEPARTAMENTO</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select> -->
+
 
                 <!-- <button data-toggle="collapse" data-target="#demo">Collapsible</button>
 
