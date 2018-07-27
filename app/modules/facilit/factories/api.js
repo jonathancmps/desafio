@@ -1,10 +1,10 @@
 angular.module('facilit')
     .factory('ApiFactory', function () {
         var factory = {
-            getApiToView: _getApiToView,
-            apiFilter: _apiFilter
-            // valParcCalc: _valParcCalc,
-            // totalCalc: _totalCalc
+            getApiToView       : _getApiToView,
+            apiFilter          : _apiFilter,
+            departmentFilter   :_departmentFilter,
+            roleFilter         :_roleFilter
         }
         return factory;
 
@@ -14,9 +14,6 @@ angular.module('facilit')
                 photo       : data.photo,
                 department  : data.department,
                 role        : data.role
-                // valor: data.valor,
-                // quantidade: data.quantidade,
-                // valorParcial: _valParcCalc(data.valor, data.quantidade)
             };
         }
 
@@ -28,32 +25,48 @@ angular.module('facilit')
             if (!Array.isArray(response.data.users))
                 _data = [response.data.users];
             else
-                _data = response.data.users;
+                _data = response.data.users;    
             angular.forEach( _data, function (val) {
                 result.push(_apiFilter(val));
             });
-            return result;
+            return result;           
         }
 
-        // function _valParcCalc(valor, quantidade) {
-        //     if (angular.isUndefined(valor) || (angular.isUndefined(quantidade)))
-        //         var result = 0
-        //     result = parseFloat(valor) * parseInt(quantidade);
-        //     return result;
+        function _departmentFilter(data){
+            var resultado = []
+            angular.forEach(data, function(element){ 
+                resultado.push(element.department)
+            })    
+            var teste = resultado.filter( onlyUnique );
+            return teste        
+        }
+
+        function _roleFilter(data){
+            var resultado = []
+            angular.forEach(data, function(element){ 
+                resultado.push(element.role)
+            })    
+            var teste = resultado.filter( onlyUnique );
+            return teste        
+        }
+    
+            function onlyUnique(value, index, self) { 
+                return self.indexOf(value) === index;
+            }
+
+         // function getDepartment(data){
+            //     resultado = angular.forEach(data, function(element){                    
+            //     })
+            //     vm.tes =  resultado.filter( onlyUnique );
+            //     console.log(element.department)
+            // }
+
+        // function onlyUnique(value, index, self) { 
+        //     return self.indexOf(value) === index;
         // }
+        
+       
+        // var unique = a.filter( onlyUnique );
 
-        // function _totalCalc(data) {
-        //     if (angular.isUndefined(data))
-        //         return 0;
-        //     if (!Array.isArray(data))
-        //         data = [data];
-
-        //     var result = 0;
-        //     angular.forEach(data, function (item) {
-        //         result = result + (angular.isDefined(item.valorParcial) ? item.valorParcial : 0);
-        //     });
-        //     return result;
-        // }
-
-
+       
     })
