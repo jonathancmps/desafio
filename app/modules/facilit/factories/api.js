@@ -4,7 +4,8 @@ angular.module('facilit')
             getApiToView       : _getApiToView,
             apiFilter          : _apiFilter,
             departmentFilter   :_departmentFilter,
-            roleFilter         :_roleFilter
+            roleFilter         :_roleFilter,
+            servicesFilter     : _servicesFilter
         }
         return factory;
 
@@ -20,7 +21,7 @@ angular.module('facilit')
         function _getApiToView(response){
             var _data = [];
             var result = [];
-            if (angular.isUndefined(response.data.users) ) // || angular.isUndefined(response.data))
+            if (angular.isUndefined(response.data.users) )
                 return;
             if (!Array.isArray(response.data.users))
                 _data = [response.data.users];
@@ -50,9 +51,19 @@ angular.module('facilit')
             return teste        
         }
     
-            function onlyUnique(value, index, self) { 
-                return self.indexOf(value) === index;
-            }
+        function onlyUnique(value, index, self) { 
+            return self.indexOf(value) === index;
+        }
+
+        function _servicesFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Services'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
 
          // function getDepartment(data){
             //     resultado = angular.forEach(data, function(element){                    
