@@ -12,10 +12,10 @@
         
         <h3 id="category-title">Filtrar por categoria</h3>
 
-        <div class="test">
+        <div class="cat">
             <a data-toggle="collapse" data-target="#demo" href="#" class="list-group-item"><img class='category-img' src="./../../../assets/img/i-departamento.png" alt="">DEPARTAMENTO</a>
-            <div id="demo" class="collapse" >
-                <a href="#" ng-class="vm.click" ng-click = "vm.checkCategory(depName)" ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
+            <div id="demo" class="collapse" > 
+                <a href="#" ng-click = "vm.checkCategory(depName)"  ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
             </div>
         </div>
 
@@ -27,15 +27,14 @@
         </div>
            
         <div class="button-filter">
-            <button "vm.checkCategory(depName)" type="button" class="btn btn-sm">FILTRAR</button>
+            <button ng-click = "vm.filtred(vm.categories)" type="button" class="btn btn-sm">FILTRAR</button>
         </div>               
     </div>
     
     <div class="container col-md-8 container-right">
         <table class="table  table-hover">
             <tr  ng-repeat = "item in vm.apiList | filter : search">
-            <!-- <tr  ng-repeat = "item in vm.categoies"></tr> -->
-                <td id="teste"> <!--    ******************************************        -->
+                <td>
                     <img ng-src="{{item.photo}}"  class="img-circle photo-circle">                        
                 </td>
                 <td id="calaborators-info">
@@ -46,76 +45,3 @@
         </table>
     </div>     
 </div>
-
-  <!-- <select class="form-control" id="sel1" ><img src="./../../../assets/img/i-cargo.png" alt="">
-    <option>DEPARTAMENTO</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-</select> -->
-
-
-                <!-- <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-
-                <div id="demo" class="collapse">
-                Lorem ipsum dolor text....
-                </div> -->
-
-                <!-- <div class="list-group"class="list-group-item">
-                    
-                    <a data-toggle="collapse" data-target="#demo" href="#" class="list-group-item active"> Cras justo odio</a>
-                    <div id="demo" class="collapse" ng-repeat="depName in vm.department">
-                        <a href="#" class="list-group-item" ng-bind="depName"></a>
-                    </div>
-                  </div>
- -->
-  
-  
- <!-- 
-                    
-                    <select class="form-control" id="sel1"  >
-                        <option ng-repeat="depName in vm.department" value="DEPARTAMENTO" ng-bind="depName"></option>        
-                    </select>
-                    
-                    
-                    <div class="dropdown">
-                
-                <select class="form-control" id="sel1" >
-                    <option>DEPARTAMENTO</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                <br/>
-                <select class="form-control" id="sel2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                <br/>
-               
-              </div> -->
-  
-    
-     
-      
-    
-    <!-- <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputFile">File input</label>
-      <input type="file" id="exampleInputFile">
-      <p class="help-block">Example block-level help text here.</p>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Check me out
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form> -->
