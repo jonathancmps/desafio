@@ -125,3 +125,7 @@
   .test{
       margin-bottom: 20px;
   }
+
+  .clicked{
+      background-color: blue;
+  }

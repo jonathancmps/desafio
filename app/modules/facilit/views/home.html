@@ -15,7 +15,7 @@
         <div class="test">
             <a data-toggle="collapse" data-target="#demo" href="#" class="list-group-item"><img class='category-img' src="./../../../assets/img/i-departamento.png" alt="">DEPARTAMENTO</a>
             <div id="demo" class="collapse" >
-                <a href="#" ng-click = "vm.checkCategory(depName)" ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
+                <a href="#" ng-class="vm.click" ng-click = "vm.checkCategory(depName)" ng-repeat="depName in vm.department" class="list-group-item" ng-bind="depName"></a>
             </div>
         </div>
 
@@ -27,14 +27,14 @@
         </div>
            
         <div class="button-filter">
-            <button type="button" class="btn btn-sm">FILTRAR</button>
+            <button "vm.checkCategory(depName)" type="button" class="btn btn-sm">FILTRAR</button>
         </div>               
     </div>
     
     <div class="container col-md-8 container-right">
         <table class="table  table-hover">
             <tr  ng-repeat = "item in vm.apiList | filter : search">
-            <!-- <tr  ng-repeat = "item in vm.checkCategory"></tr> -->
+            <!-- <tr  ng-repeat = "item in vm.categoies"></tr> -->
                 <td id="teste"> <!--    ******************************************        -->
                     <img ng-src="{{item.photo}}"  class="img-circle photo-circle">                        
                 </td>

@@ -1,11 +1,22 @@
 angular.module('facilit')
     .factory('ApiFactory', function () {
         var factory = {
-            getApiToView       : _getApiToView,
-            apiFilter          : _apiFilter,
-            departmentFilter   :_departmentFilter,
-            roleFilter         :_roleFilter,
-            servicesFilter     : _servicesFilter
+            getApiToView                    : _getApiToView,
+            apiFilter                       : _apiFilter,
+            departmentFilter                : _departmentFilter,
+            roleFilter                      : _roleFilter,
+            servicesFilter                  : _servicesFilter,
+            marketingFilter                 : _marketingFilter,
+            accountingFilter                : _accountingFilter,
+            businessDevelopmentFilter       : _businessDevelopmentFilter,
+            humanResourcesFilter            : _humanResourcesFilter,
+            productManagementFilter         : _productManagementFilter,
+            engineeringFilter               : _engineeringFilter,
+            researchAndDevelopmentFilter    : _researchAndDevelopmentFilter,
+            salesFilter                     : _salesFilter,
+            legalFilter                     : _legalFilter,
+            trainingFilter                  : _trainingFilter,
+            supportFilter                   : _supportFilter
         }
         return factory;
 
@@ -64,6 +75,118 @@ angular.module('facilit')
             }) 
             return result
         }
+
+        function _marketingFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Marketing'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _accountingFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Accounting'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _businessDevelopmentFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Business Development'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _humanResourcesFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Human Resources'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _productManagementFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Product Management'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _engineeringFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Engineering'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _researchAndDevelopmentFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Research and Development'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _salesFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Sales'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _legalFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Legal'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _trainingFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Training'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        function _supportFilter(data){
+            var result = []
+            angular.forEach(data, function(element){ 
+                if(element.department == 'Support'){
+                    result.push(element)
+                }                
+            }) 
+            return result
+        }
+
+        
 
          // function getDepartment(data){
             //     resultado = angular.forEach(data, function(element){                    
